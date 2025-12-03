@@ -1,38 +1,128 @@
 [
     {
-        "id": 1,
-        "nombre": "Kit de Iluminación LED 600W",
-        "precio": 189.99,
+        "id": 101,
+        "nombre": "Kit Iluminación Quantum Board 120W",
+        "precio": 219.99,
         "categoria": "Iluminación",
-        "descripcion": "Sistema LED de alta eficiencia para crecimiento y floración.",
-        "imagen": "https://placehold.co/300x200/10B981/ffffff?text=LED+600W",
-        "stock": 15
+        "descripcion": "Máxima eficiencia para espacios pequeños y medianos. Bajo consumo, alta PPFD. Ideal para crecimiento y floración.",
+        "imagen": "https://placehold.co/400x300/10B981/ffffff?text=LED+QUANTUM+BOARD",
+        "stock": 12
     },
     {
-        "id": 2,
-        "nombre": "Fertilizante Base Crecimiento (1L)",
-        "precio": 24.50,
+        "id": 102,
+        "nombre": "Kit LED Citizen COB 300W",
+        "precio": 350.00,
+        "categoria": "Iluminación",
+        "descripcion": "Concentra la luz para una penetración superior en el dosel. Ideal para floración intensiva.",
+        "imagen": "https://placehold.co/400x300/059669/ffffff?text=COB+LED+300W",
+        "stock": 7
+    },
+    {
+        "id": 103,
+        "nombre": "Reflector Alas de Gaviota",
+        "precio": 45.00,
+        "categoria": "Iluminación",
+        "descripcion": "Distribución de luz uniforme y máxima reflexión. Compatible con ampolletas HPS/HM.",
+        "imagen": "https://placehold.co/400x300/1E40AF/ffffff?text=REFLECTOR",
+        "stock": 30
+    },
+    {
+        "id": 201,
+        "nombre": "Nutriente Base A+B Crecimiento (1L)",
+        "precio": 34.50,
         "categoria": "Nutrientes",
-        "descripcion": "Fórmula NPK optimizada para una fase vegetativa robusta.",
-        "imagen": "https://placehold.co/300x200/FACC15/000000?text=FERTILIZANTE",
-        "stock": 50
+        "descripcion": "Fórmula bifásica mineral para una estructura vegetativa fuerte y sana. Uso en hidroponía y sustrato.",
+        "imagen": "https://placehold.co/400x300/FACC15/000000?text=NUTRIENTE+A+B+1L",
+        "stock": 45
     },
     {
-        "id": 3,
-        "nombre": "Armario de Cultivo 100x100x200cm",
-        "precio": 115.00,
-        "categoria": "Armarios",
-        "descripcion": "Estructura metálica resistente con interior mylar reflectante.",
-        "imagen": "https://placehold.co/300x200/3B82F6/ffffff?text=ARMARIO",
-        "stock": 8
+        "id": 202,
+        "nombre": "Estimulador de Raíces Orgánico",
+        "precio": 19.95,
+        "categoria": "Nutrientes",
+        "descripcion": "Potencia el desarrollo radicular en las primeras semanas y reduce el estrés por trasplante. Certificado orgánico.",
+        "imagen": "https://placehold.co/400x300/EAB308/000000?text=ROOT+STIMULATOR",
+        "stock": 60
     },
     {
-        "id": 4,
-        "nombre": "Extractor en Línea 150mm",
-        "precio": 65.99,
+        "id": 203,
+        "nombre": "PK Booster para Floración (500ml)",
+        "precio": 28.00,
+        "categoria": "Nutrientes",
+        "descripcion": "Aporte extra de Fósforo y Potasio para cogollos densos y pesados. Maximiza el rendimiento final.",
+        "imagen": "https://placehold.co/400x300/B45309/ffffff?text=PK+BOOSTER",
+        "stock": 30
+    },
+    {
+        "id": 204,
+        "nombre": "Corrector de pH Down Ácido",
+        "precio": 14.00,
+        "categoria": "Nutrientes",
+        "descripcion": "Concentrado para reducir el pH del agua de riego. Fundamental para la absorción de nutrientes.",
+        "imagen": "https://placehold.co/400x300/94A3B8/000000?text=PH+DOWN",
+        "stock": 80
+    },
+    {
+        "id": 301,
+        "nombre": "Sustrato Premium Light Mix (50L)",
+        "precio": 18.50,
+        "categoria": "Sustratos",
+        "descripcion": "Mezcla aireada de turba y perlita, ideal para comenzar con semilleros y plantas jóvenes.",
+        "imagen": "https://placehold.co/400x300/3B82F6/ffffff?text=SUSTRATO+50L",
+        "stock": 75
+    },
+    {
+        "id": 302,
+        "nombre": "Bloques de Lana de Roca Grodan",
+        "precio": 12.90,
+        "categoria": "Sustratos",
+        "descripcion": "Perfecto para sistemas hidropónicos y esquejes. Alta retención de agua y excelente aireación.",
+        "imagen": "https://placehold.co/400x300/2563EB/ffffff?text=LANA+ROCA",
+        "stock": 90
+    },
+    {
+        "id": 401,
+        "nombre": "Extractor Helicoidal 125mm (200m³/h)",
+        "precio": 55.00,
         "categoria": "Clima",
-        "descripcion": "Extractor silencioso y potente para renovación de aire.",
-        "imagen": "https://placehold.co/300x200/EF4444/ffffff?text=EXTRACTOR",
-        "stock": 22
+        "descripcion": "Renovación de aire básica y continua. Bajo nivel de ruido. Fácil instalación.",
+        "imagen": "https://placehold.co/400x300/EF4444/ffffff?text=EXTRACTOR+125MM",
+        "stock": 18
+    },
+    {
+        "id": 402,
+        "nombre": "Filtro de Carbón Activo 150mm",
+        "precio": 78.99,
+        "categoria": "Clima",
+        "descripcion": "Neutraliza olores de forma eficiente y segura. Dura hasta 12 meses de uso continuo.",
+        "imagen": "https://placehold.co/400x300/DC2626/ffffff?text=FILTRO+CARBON",
+        "stock": 25
+    },
+    {
+        "id": 403,
+        "nombre": "Termohigrómetro Digital Pro",
+        "precio": 19.50,
+        "categoria": "Clima",
+        "descripcion": "Mide temperatura y humedad con precisión. Memoria de máximas y mínimas.",
+        "imagen": "https://placehold.co/400x300/F59E0B/ffffff?text=TERMOMETRO",
+        "stock": 55
+    },
+    {
+        "id": 501,
+        "nombre": "Tijeras de Poda Curvas",
+        "precio": 9.99,
+        "categoria": "Accesorios",
+        "descripcion": "Cuchillas de acero inoxidable, ideales para manicurado de precisión y recolección.",
+        "imagen": "https://placehold.co/400x300/4B5563/ffffff?text=TIJERAS+PODA",
+        "stock": 110
+    },
+    {
+        "id": 502,
+        "nombre": "Medidor de pH Digital",
+        "precio": 39.99,
+        "categoria": "Accesorios",
+        "descripcion": "Herramienta esencial para el control de pH en el agua de riego. Alta precisión.",
+        "imagen": "https://placehold.co/400x300/6B7280/ffffff?text=MEDIDOR+PH",
+        "stock": 40
     }
 ]

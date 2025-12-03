@@ -3,104 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GARDEN PRO - Growshop Demo Profesional</title>
-    <!-- Usaremos Tailwind CSS para un diseño limpio y rápido. -->
+    <title>GREEN HAVEN - Growshop Demo Profesional</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Tipografía y Colores Base */
         body { font-family: 'Inter', sans-serif; background-color: #f7fafc; }
-        /* Estilos personalizados para efectos hover */
-        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
-        /* Estilo para el fondo de la cabecera */
-        .hero-bg {
-            background-image: url('https://placehold.co/1200x400/10B981/ffffff?text=CULTIVO+PROFESIONAL+Y+ASESORIA');
-            background-size: cover;
-            background-position: center;
-        }
+        .bg-primary { background-color: #10B981; /* Verde esmeralda */ }
+        .text-primary { color: #10B981; }
+        .shadow-hover { transition: transform 0.3s, box-shadow 0.3s; }
+        .shadow-hover:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); }
+
+        /* Estilo para el carrusel de imágenes */
+        .carousel-item { display: none; opacity: 0; transition: opacity 0.6s ease-in-out; }
+        .carousel-item.active { display: block; opacity: 1; }
     </style>
 </head>
 <body class="text-gray-800">
 
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/56912345678" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition duration-300 transform hover:scale-105" title="Chatea con nosotros por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.001 24c-6.626 0-12-5.374-12-12s5.374-12 12-12c6.627 0 12 5.374 12 12s-5.373 12-12 12zm0-22c-5.514 0-10 4.486-10 10s4.486 10 10 10 10-4.486 10-10-4.486-10-10-10zm0 18.25c-4.54 0-8.25-3.71-8.25-8.25s3.71-8.25 8.25-8.25 8.25 3.71 8.25 8.25-3.71 8.25-8.25 8.25zm.082-13.68c-.689-.418-1.554-.648-2.458-.648-.823 0-1.636.195-2.396.586-.168.087-.336.195-.504.282l-.438-.348-.124-.108c-.015-.018-.03-.03-.045-.042-.014-.012-.027-.024-.042-.036-.048-.042-.096-.084-.144-.126-.201-.15-.402-.303-.603-.453l-.261.27c-.282.288-.426.702-.426 1.116s.144.828.426 1.116c.09.096.198.192.306.279.135.108.27.189.414.288.756.495 1.62.747 2.502.747.882 0 1.746-.252 2.502-.747.144-.099.279-.18.414-.288.108-.087.216-.183.306-.279.282-.288.426-.702.426-1.116s-.144-.828-.426-1.116l-.261.27c-.201-.15-.402-.303-.603-.453-.048-.042-.096-.084-.144-.126-.015-.012-.03-.024-.045-.036-.015-.012-.03-.024-.045-.036l-.124-.108-.438-.348c-.168-.087-.336-.195-.504-.282-.76-.391-1.573-.586-2.396-.586-.904 0-1.769.23-2.458.648z"/>
+        </svg>
+    </a>
+
     <!-- HEADER (Navegación) -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-emerald-600">GARDEN PRO</a>
-            <div class="flex space-x-6 text-lg font-medium">
-                <a href="#productos" class="text-gray-600 hover:text-emerald-600 transition duration-300">Tienda</a>
-                <a href="#asesoria" class="text-gray-600 hover:text-emerald-600 transition duration-300">Asesoría</a>
-                <a href="#contacto" class="text-gray-600 hover:text-emerald-600 transition duration-300">Contacto</a>
+    <header class="bg-gray-900 shadow-xl sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-emerald-400">GREEN HAVEN</a>
+            <div class="flex space-x-8 text-lg font-medium">
+                <a href="#productos" class="text-gray-300 hover:text-emerald-400 transition duration-300">Tienda</a>
+                <a href="#ubicacion" class="text-gray-300 hover:text-emerald-400 transition duration-300">Ubicación</a>
+                <a href="#asesoria" class="text-gray-300 hover:text-emerald-400 transition duration-300">Asesoría</a>
+                <a href="#contacto" class="text-gray-300 hover:text-emerald-400 transition duration-300">Contacto</a>
             </div>
             <!-- Botón de Carrito (simulado) -->
-            <button id="cart-button" class="bg-emerald-500 text-white p-2 rounded-full hover:bg-emerald-600 transition duration-300 relative shadow-lg">
+            <button id="cart-button" class="bg-emerald-500 text-white p-3 rounded-full hover:bg-emerald-600 transition duration-300 relative shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
                 <span id="cart-count" class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">0</span>
             </button>
-        </nav>
+        </div>
     </header>
 
     <!-- MAIN CONTENT -->
     <main>
-        <!-- SECCIÓN 1: BANNER PRINCIPAL / PROPUESTA DE VALOR -->
-        <section class="hero-bg h-96 flex items-center justify-center text-center">
-            <div class="bg-black bg-opacity-50 p-8 rounded-xl max-w-2xl mx-4">
-                <h1 class="text-5xl font-extrabold text-white mb-4">
-                    Tu Cultivo, Nuestro Éxito.
-                </h1>
-                <p class="text-xl text-emerald-100 mb-8">
-                    Asesoría experta y productos de máxima calidad para interior y exterior.
-                </p>
-                <a href="#productos" class="bg-emerald-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-emerald-600 transition duration-300 shadow-xl">
-                    Ver Catálogo Ahora
-                </a>
+        <!-- SECCIÓN 1: CARRUSEL / ANUNCIOS ROTATIVOS -->
+        <section class="relative w-full overflow-hidden bg-gray-100 shadow-inner">
+            <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+                <!-- Ítem 1 -->
+                <div class="carousel-item active min-w-full h-96 flex items-center justify-center text-center p-4 bg-primary text-white">
+                    <div class="max-w-3xl">
+                        <h2 class="text-5xl font-extrabold mb-3">🔥 20% OFF en Nutrientes Premium</h2>
+                        <p class="text-xl">Solo esta semana. ¡Aprovecha para darle a tu cultivo lo mejor!</p>
+                    </div>
+                </div>
+                <!-- Ítem 2 -->
+                <div class="carousel-item min-w-full h-96 flex items-center justify-center text-center p-4 bg-gray-700 text-white">
+                    <div class="max-w-3xl">
+                        <h2 class="text-5xl font-extrabold mb-3">🌱 Kit de Cultivo Interior Pro</h2>
+                        <p class="text-xl">El pack completo para iniciarte con éxito. ¡Envío gratis!</p>
+                    </div>
+                </div>
+                <!-- Ítem 3 -->
+                <div class="carousel-item min-w-full h-96 flex items-center justify-center text-center p-4 bg-indigo-600 text-white">
+                    <div class="max-w-3xl">
+                        <h2 class="text-5xl font-extrabold mb-3">💡 Nueva Iluminación LED</h2>
+                        <p class="text-xl">Tecnología de espectro completo, menor consumo y máxima producción.</p>
+                    </div>
+                </div>
             </div>
+            <!-- Controles (Opcional, manejado por JS) -->
         </section>
 
-        <!-- SECCIÓN 2: PRODUCTOS DESTACADOS (Renderizados por JS) -->
-        <section id="productos" class="container mx-auto px-4 py-16">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gray-700">Productos Destacados</h2>
+        <!-- SECCIÓN 2: BARRA DE BÚSQUEDA Y FILTROS -->
+        <section id="productos" class="container mx-auto px-4 py-12">
+            <h2 class="text-4xl font-extrabold text-center mb-10 text-gray-800">Nuestro Catálogo Experto</h2>
+            
+            <!-- Barra de Búsqueda -->
+            <div class="mb-8 max-w-2xl mx-auto">
+                <input type="text" id="search-input" placeholder="Buscar por nombre de producto..." class="w-full px-6 py-3 border border-gray-300 rounded-full shadow-lg focus:outline-none focus:ring-4 focus:ring-emerald-200 transition duration-300 text-lg">
+            </div>
+
+            <!-- Filtros de Categoría -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button data-category="Todos" class="category-btn bg-emerald-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-emerald-700 transition duration-300 shadow-md">Todos</button>
+                <button data-category="Nutrientes" class="category-btn bg-white text-gray-700 border border-gray-300 px-5 py-2 rounded-full font-semibold hover:bg-emerald-100 transition duration-300">Nutrientes</button>
+                <button data-category="Iluminación" class="category-btn bg-white text-gray-700 border border-gray-300 px-5 py-2 rounded-full font-semibold hover:bg-emerald-100 transition duration-300">Iluminación</button>
+                <button data-category="Sustratos" class="category-btn bg-white text-gray-700 border border-gray-300 px-5 py-2 rounded-full font-semibold hover:bg-emerald-100 transition duration-300">Sustratos</button>
+                <button data-category="Clima" class="category-btn bg-white text-gray-700 border border-gray-300 px-5 py-2 rounded-full font-semibold hover:bg-emerald-100 transition duration-300">Clima</button>
+                <button data-category="Accesorios" class="category-btn bg-white text-gray-700 border border-gray-300 px-5 py-2 rounded-full font-semibold hover:bg-emerald-100 transition duration-300">Accesorios</button>
+            </div>
+
+            <!-- Lista de Productos (Renderizados por JS) -->
             <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <!-- Aquí se inyectarán los productos desde script.js -->
-                <div class="col-span-full text-center text-gray-500">
+                <div class="col-span-full text-center text-gray-500 p-10">
                     Cargando productos...
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 3: ASESORÍA EXPERTA -->
-        <section id="asesoria" class="bg-emerald-50 py-16">
+        <!-- SECCIÓN 3: UBICACIÓN DEL LOCAL (MAPA) -->
+        <section id="ubicacion" class="bg-gray-100 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-extrabold text-center mb-10 text-gray-800">Visítanos en Nuestra Tienda</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <!-- Información de Contacto -->
+                    <div class="bg-white p-8 rounded-xl shadow-xl">
+                        <h3 class="text-2xl font-bold mb-4 text-emerald-600">GREEN HAVEN Central</h3>
+                        <p class="text-gray-600 mb-4">📍 Dirección: Av. Cultivo Verde #456, Santiago, Chile</p>
+                        <p class="text-gray-600 mb-4">📞 Teléfono: +56 9 1234 5678</p>
+                        <p class="text-gray-600 mb-4">📧 Email: contacto@greenhaven.demo</p>
+                        <p class="text-gray-700 font-semibold mt-6">Horario:</p>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Lunes a Viernes: 10:00 - 18:30</li>
+                            <li>Sábados: 10:00 - 14:00</li>
+                            <li>Domingos: Cerrado</li>
+                        </ul>
+                    </div>
+                    <!-- Mapa Simulacro (Usando IFRAME de Google Maps) -->
+                    <div>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13303.882141575023!2d-70.62762391264667!3d-33.435775537637845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c57805d9a957%3A0xd64c519a8f2762f0!2sPlaza%20de%20Armas%2C%20Santiago!5e0!3m2!1sen!2scl!4v1700000000000!5m2!1sen!2scl" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: ASESORÍA EXPERTA -->
+        <section id="asesoria" class="bg-gray-800 py-16">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="text-4xl font-bold mb-4 text-emerald-700">¿Necesitas ayuda con tu cultivo?</h2>
-                <p class="text-xl mb-8 text-gray-600">
-                    Nuestro equipo de ingenieros agrónomos te ofrece planes de seguimiento personalizados.
+                <h2 class="text-4xl font-extrabold mb-4 text-emerald-400">¿Dudas? ¡Nuestra Asesoría te Guía!</h2>
+                <p class="text-xl mb-8 text-gray-300">
+                    Pregunta a nuestros expertos agrónomos sobre pH, EC, plagas y más.
                 </p>
-                <button class="bg-emerald-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-emerald-700 transition duration-300 shadow-lg">
-                    Agenda una Consulta
+                <button class="bg-emerald-500 text-white px-10 py-4 rounded-xl text-lg font-semibold hover:bg-emerald-600 transition duration-300 shadow-xl transform hover:scale-105">
+                    Agenda una Consulta VIP
                 </button>
             </div>
         </section>
 
-        <!-- SECCIÓN 4: CONTACTO (Simulación de Modal/Formulario) -->
+        <!-- SECCIÓN 5: CONTACTO (Formulario simulado) -->
         <section id="contacto" class="container mx-auto px-4 py-16">
-             <h2 class="text-4xl font-bold text-center mb-12 text-gray-700">Contáctanos</h2>
-             <div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-2xl">
-                 <form>
+             <h2 class="text-4xl font-extrabold text-center mb-12 text-gray-800">Envíanos un Mensaje</h2>
+             <!-- Contenido del formulario... (no requiere cambios) -->
+             <div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-2xl border border-gray-100">
+                 <form onsubmit="event.preventDefault(); showToast('Mensaje enviado. ¡Simulación exitosa!');">
                      <div class="mb-4">
                          <label for="name" class="block text-gray-700 font-semibold mb-2">Nombre</label>
-                         <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Tu nombre completo">
+                         <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-emerald-200" placeholder="Tu nombre completo" required>
                      </div>
                      <div class="mb-4">
                          <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
-                         <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="tu.email@ejemplo.com">
+                         <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-emerald-200" placeholder="tu.email@ejemplo.com" required>
                      </div>
                      <div class="mb-6">
                          <label for="message" class="block text-gray-700 font-semibold mb-2">Mensaje</label>
-                         <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="¿En qué podemos ayudarte?"></textarea>
+                         <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-emerald-200" placeholder="¿En qué podemos ayudarte?" required></textarea>
                      </div>
-                     <button type="submit" class="w-full bg-emerald-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-emerald-700 transition duration-300">
-                         Enviar Consulta (Simulado)
+                     <button type="submit" class="w-full bg-emerald-600 text-white px-4 py-3 rounded-lg font-bold hover:bg-emerald-700 transition duration-300 shadow-lg">
+                         Enviar Consulta
                      </button>
                  </form>
              </div>
@@ -108,9 +180,9 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-4 text-center text-sm">
-            <p>&copy; 2024 Garden Pro Demo. Todos los derechos reservados.</p>
+            <p>&copy; 2024 GREEN HAVEN Demo. Todos los derechos reservados.</p>
             <p class="mt-2 text-gray-400">
                 **Aviso Legal Demo:** Este sitio es una maqueta de portafolio. La venta de productos está sujeta a la normativa local vigente para uso técnico y/o decorativo.
             </p>
@@ -122,13 +194,12 @@
         <div class="bg-white rounded-xl shadow-2xl p-6 w-11/12 md:w-1/3">
             <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Tu Carrito</h3>
             <div id="cart-items" class="max-h-80 overflow-y-auto mb-4">
-                <!-- Los ítems del carrito irán aquí -->
                 <p id="empty-cart-message" class="text-gray-500">El carrito está vacío.</p>
             </div>
-            <div class="text-xl font-bold text-right mb-4">
+            <div class="text-xl font-bold text-right mb-4 border-t pt-4">
                 Total: <span id="cart-total">0.00</span> €
             </div>
-            <button id="close-cart-button" class="bg-red-500 text-white w-full py-2 rounded-lg hover:bg-red-600 transition duration-300">Cerrar</button>
+            <button id="close-cart-button" class="bg-red-500 text-white w-full py-2 rounded-lg font-bold hover:bg-red-600 transition duration-300">Cerrar</button>
         </div>
     </div>
 
