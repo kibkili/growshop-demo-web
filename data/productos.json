@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "nombre": "Kit de Iluminación LED 600W",
+        "precio": 189.99,
+        "categoria": "Iluminación",
+        "descripcion": "Sistema LED de alta eficiencia para crecimiento y floración.",
+        "imagen": "https://placehold.co/300x200/10B981/ffffff?text=LED+600W",
+        "stock": 15
+    },
+    {
+        "id": 2,
+        "nombre": "Fertilizante Base Crecimiento (1L)",
+        "precio": 24.50,
+        "categoria": "Nutrientes",
+        "descripcion": "Fórmula NPK optimizada para una fase vegetativa robusta.",
+        "imagen": "https://placehold.co/300x200/FACC15/000000?text=FERTILIZANTE",
+        "stock": 50
+    },
+    {
+        "id": 3,
+        "nombre": "Armario de Cultivo 100x100x200cm",
+        "precio": 115.00,
+        "categoria": "Armarios",
+        "descripcion": "Estructura metálica resistente con interior mylar reflectante.",
+        "imagen": "https://placehold.co/300x200/3B82F6/ffffff?text=ARMARIO",
+        "stock": 8
+    },
+    {
+        "id": 4,
+        "nombre": "Extractor en Línea 150mm",
+        "precio": 65.99,
+        "categoria": "Clima",
+        "descripcion": "Extractor silencioso y potente para renovación de aire.",
+        "imagen": "https://placehold.co/300x200/EF4444/ffffff?text=EXTRACTOR",
+        "stock": 22
+    }
+]
